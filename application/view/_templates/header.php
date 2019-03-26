@@ -31,7 +31,7 @@
                 <li <?php if (View::checkForActiveController($filename, "note")) { echo ' class="active" '; } ?> >
                     <a href="<?php echo Config::get('URL'); ?>note/index">My Notes</a>
                 </li>
-            <?php } else { ?>
+            <?php } else{ ?>
                 <!-- for not logged in users -->
                 <li <?php if (View::checkForActiveControllerAndAction($filename, "login/index")) { echo ' class="active" '; } ?> >
                     <a href="<?php echo Config::get('URL'); ?>login/index">Login</a>
@@ -39,7 +39,7 @@
                 <li <?php if (View::checkForActiveControllerAndAction($filename, "register/index")) { echo ' class="active" '; } ?> >
                     <a href="<?php echo Config::get('URL'); ?>register/index">Register</a>
                 </li>
-            <?php } ?>
+            <?php }?>
         </ul>
 
         <!-- my account -->

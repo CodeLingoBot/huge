@@ -239,7 +239,7 @@ class PasswordResetModel
         if (empty($user_name)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_USERNAME_FIELD_EMPTY'));
             return false;
-        } else if (empty($user_password_reset_hash)) {
+        } elseif (empty($user_password_reset_hash)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_PASSWORD_RESET_TOKEN_MISSING'));
             return false;
         } else if (empty($user_password_new) || empty($user_password_repeat)) {
@@ -251,9 +251,7 @@ class PasswordResetModel
         } else if (strlen($user_password_new) < 6) {
             Session::add('feedback_negative', Text::get('FEEDBACK_PASSWORD_TOO_SHORT'));
             return false;
-        }
-
-        return true;
+        }       return true;
     }
 
 
@@ -346,7 +344,7 @@ class PasswordResetModel
         if (!password_verify($user_password_current, $user_password_hash)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_PASSWORD_CURRENT_INCORRECT'));
             return false;
-        } else if (empty($user_password_new) || empty($user_password_repeat)) {
+        } elseif (empty($user_password_new) || empty($user_password_repeat)) {
             Session::add('feedback_negative', Text::get('FEEDBACK_PASSWORD_FIELD_EMPTY'));
             return false;
         } else if ($user_password_new !== $user_password_repeat) {
@@ -358,8 +356,6 @@ class PasswordResetModel
         } else if ($user_password_current == $user_password_new){
             Session::add('feedback_negative', Text::get('FEEDBACK_PASSWORD_NEW_SAME_AS_CURRENT'));
             return false;
-        }
-
-        return true;
+        }       return true;
     }
 }

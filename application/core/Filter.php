@@ -57,7 +57,7 @@ class Filter
 
         // if argument is an array or an object, 
         // recursivly filters its content 
-        } else if (is_array($value) || is_object($value)) {
+        } elseif (is_array($value) || is_object($value)) {
 
             /** 
              * Make sure the element is passed by reference,
